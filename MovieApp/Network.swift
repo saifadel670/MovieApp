@@ -20,7 +20,9 @@ class Network{
             case .success:
                 guard let data = response.data else { return }
                 do {
-                    let result = try JSONDecoder().decode(T.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode(T.self, from: data)
                     completion(result, nil)
                 }catch let error {
                     completion(nil,error)

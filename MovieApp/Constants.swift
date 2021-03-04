@@ -14,6 +14,10 @@ struct Api {
     enum endpoint: String {
         case popular
         case top_rated
-        //case 550
+        case upcoming
+        case now_playing
     }
+    
+    
+    
 }

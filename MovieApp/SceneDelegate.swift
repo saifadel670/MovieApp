@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationCOntroller = UINavigationController(rootViewController: HomeViewController())
+        let navigationCOntroller = UINavigationController(rootViewController: ViewController())
         navigationCOntroller.navigationBar.prefersLargeTitles = false
+        navigationCOntroller.navigationBar.prefersLargeTitles = true
+        navigationCOntroller.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         window?.rootViewController = navigationCOntroller
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
